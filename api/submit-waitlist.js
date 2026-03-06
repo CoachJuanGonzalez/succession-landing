@@ -19,10 +19,21 @@ module.exports = async function handler(req, res) {
     try {
         const { name, email, role, involvement } = req.body;
 
+        // Honeypot — bots fill this, humans don't
+        if (req.body.website) {
+            return res.status(200).json({ success: true, message: 'Thank you!' });
+        }
+
         // Validation
         if (!name || !email) {
             return res.status(400).json({ error: 'Name and email are required.' });
         }
+
+        // Length limits — prevent abuse/spam
+        if (name.length > 100)        return res.status(400).json({ error: 'Name is too long.' });
+        if (email.length > 254)       return res.status(400).json({ error: 'Email is too long.' });
+        if ((role || '').length > 100)       return res.status(400).json({ error: 'Invalid role.' });
+        if ((involvement || '').length > 2000) return res.status(400).json({ error: 'Message is too long (max 2000 characters).' });
 
         const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(email)) {
