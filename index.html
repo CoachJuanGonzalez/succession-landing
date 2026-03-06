@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!-- v1-succession-pvrpose-ai -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Succession captures 30 years of a retiring owner's knowledge in 5 conversations — producing the handover document that protects deals, jobs, and legacies. Join the founding advisor waitlist.">
+    <title>Succession — Your Life's Work Deserves More Than a Box of Files | PVRPOSE AI</title>
+
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="author" content="Juan Gonzalez, PVRPOSE AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://succession.pvrpose.ai">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://succession.pvrpose.ai">
+    <meta property="og:title" content="Succession — 30 Years of Knowledge. 5 Conversations.">
+    <meta property="og:description" content="Most Canadian SME owners plan to exit in the next decade with no formal succession plan. Succession captures what's in their head before it walks out the door.">
+    <meta property="og:locale" content="en_CA">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy':       '#0F1F3D',
+                        'navy-mid':   '#1E3A8A',
+                        'pink':       '#ec4899',
+                        'purple':     '#8b5cf6',
+                        'gold':       '#F59E0B',
+                        'cream':      '#FFFBF5',
+                    },
+                    fontFamily: { 'sans': ['Inter', 'Helvetica', 'system-ui', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: #FFFBF5; }
+
+        .hero-bg {
+            background: linear-gradient(160deg, #0F1F3D 0%, #1E3A8A 55%, #0F1F3D 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .text-gold {
+            background: linear-gradient(135deg, #F59E0B 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .btn-main {
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            box-shadow: 0 6px 24px rgba(236,72,153,0.4);
+            transition: all 0.25s ease;
+        }
+        .btn-main:hover {
+            box-shadow: 0 10px 32px rgba(236,72,153,0.55);
+            transform: translateY(-2px);
+        }
+        .glass {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: 20px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+        }
+        .form-input {
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus {
+            border-color: #ec4899;
+            box-shadow: 0 0 0 3px rgba(236,72,153,0.12);
+            outline: none;
+        }
+        @keyframes fadeUp {
+            from { opacity:0; transform:translateY(24px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.7s ease-out both; }
+        .d1 { animation-delay: 0.1s; }
+        .d2 { animation-delay: 0.2s; }
+        .d3 { animation-delay: 0.3s; }
+        .d4 { animation-delay: 0.4s; }
+        .d5 { animation-delay: 0.5s; }
+
+        /* Mobile sticky CTA */
+        .mobile-bar {
+            position: fixed; bottom:0; left:0; right:0; z-index:999;
+            background: linear-gradient(135deg, #ec4899 0%, #1E3A8A 100%);
+            padding: 13px 20px;
+            animation: fadeUp 0.5s ease-out 1.5s both;
+        }
+
+        /* Sticky desktop pill */
+        #desktopPill { display:none; position:fixed; bottom:24px; right:24px; z-index:1000; }
+        #desktopPill.show { display:block; animation: fadeUp 0.4s ease-out both; }
+
+        #successMsg { display:none; }
+        #successMsg.show { display:block; animation: fadeUp 0.5s ease-out both; }
+
+        /* stat gradient text */
+        .stat { font-weight:900; background: linear-gradient(135deg,#ec4899,#8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+        ::-webkit-scrollbar { width:5px; }
+        ::-webkit-scrollbar-thumb { background:#ec4899; border-radius:3px; }
+    </style>
+</head>
+<body class="antialiased">
+
+<!-- Bill 96 Notice -->
+<div style="background:#1E3A8A;color:#fff;text-align:center;padding:9px 16px;font-size:12.5px;">
+    🇫🇷 <strong>Version française en préparation.</strong>
+    Pour communiquer en français : <a href="mailto:juan@pvrpose.ai" style="color:#fbcfe8;text-decoration:underline;">juan@pvrpose.ai</a>
+</div>
+
+<!-- ── NAV ── -->
+<nav class="hero-bg px-6 md:px-12 py-4">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+        <div>
+            <span class="text-white font-black text-lg tracking-tight">SUCCESSION</span>
+            <span class="text-pink-300 text-xs ml-2 font-medium">by PVRPOSE AI</span>
+        </div>
+        <a href="#waitlist" class="btn-main text-white px-5 py-2 rounded-full text-sm font-bold hidden md:inline-block">
+            Join the Waitlist →
+        </a>
+    </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero-bg text-white px-6 md:px-12 pt-16 pb-28 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]"
+         style="background-image:radial-gradient(circle,white 1px,transparent 1px);background-size:28px 28px;"></div>
+
+    <div class="max-w-4xl mx-auto relative text-center md:text-left">
+
+        <div class="fade-up inline-block glass text-pink-200 text-sm font-medium px-4 py-2 rounded-full mb-8">
+            🇨🇦 &nbsp;Built for Canadian SME Succession
+        </div>
+
+        <h1 class="fade-up d1 text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6"
+            style="line-height:1.06;">
+            You built this business<br>
+            with 30 years of instinct.<br>
+            <span class="text-gold">Don't let it walk out the door with you.</span>
+        </h1>
+
+        <p class="fade-up d2 text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto md:mx-0 leading-relaxed font-light">
+            Succession is a voice-powered AI tool that captures what retiring owners know
+            through conversation — and turns it into a buyer-ready handover document
+            in 3–5 sessions. <strong class="text-white font-semibold">No writing. No forms. Just talking.</strong>
+        </p>
+
+        <div class="fade-up d3 flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-10">
+            <a href="#waitlist" class="btn-main text-white px-8 py-4 rounded-xl text-lg font-bold text-center">
+                Join as Founding Advisor →
+            </a>
+            <a href="#how-it-works" class="glass text-white px-8 py-4 rounded-xl text-lg font-semibold text-center border border-white/20 hover:bg-white/10 transition-all">
+                How It Works ↓
+            </a>
+        </div>
+
+        <!-- 3 stats -->
+        <div class="fade-up d4 grid grid-cols-3 gap-4 max-w-lg mx-auto md:mx-0">
+            <div class="glass rounded-2xl p-4 text-center">
+                <div class="stat text-3xl">75%</div>
+                <div class="text-blue-200 text-xs mt-1 leading-snug">of Canadian SME owners plan to exit within 10 years</div>
+            </div>
+            <div class="glass rounded-2xl p-4 text-center">
+                <div class="stat text-3xl">$2T+</div>
+                <div class="text-blue-200 text-xs mt-1 leading-snug">CAD in business value changing hands this decade</div>
+            </div>
+            <div class="glass rounded-2xl p-4 text-center">
+                <div class="stat text-3xl">5</div>
+                <div class="text-blue-200 text-xs mt-1 leading-snug">conversations to document 30 years of know-how</div>
+            </div>
+        </div>
+
+        <p class="fade-up d5 text-blue-400 text-xs mt-6 text-center md:text-left">
+            Sources: BDC, CFIB Canadian SME Succession Research
+        </p>
+    </div>
+</section>
+
+<!-- Wave -->
+<div style="background:#0F1F3D;line-height:0;overflow:hidden;">
+    <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,50 C360,0 1080,0 1440,50 L1440,0 L0,0 Z" fill="#FFFBF5"/>
+    </svg>
+</div>
+
+<!-- ── THE PROBLEM ── -->
+<section class="py-20 px-6 md:px-12 bg-cream">
+    <div class="max-w-3xl mx-auto text-center">
+
+        <h2 class="text-3xl md:text-4xl font-black text-navy mb-6 leading-tight">
+            The buyer gets the building, the equipment,<br>
+            and the books.<br>
+            <span class="text-gradient">The part that makes it work — walks out the door.</span>
+        </h2>
+
+        <p class="text-gray-600 text-lg leading-relaxed mb-10">
+            Which client needs a personal call or they'll leave.
+            Which supplier will actually show up on a Saturday.
+            Why December is always slow and what to do about it.
+            <strong class="text-gray-800">None of that is in the books.</strong>
+        </p>
+
+        <!-- Quote -->
+        <div class="border-l-4 border-pink-400 bg-pink-50 rounded-r-2xl p-6 text-left mb-12">
+            <p class="text-gray-700 text-lg italic leading-relaxed">
+                "Most SME owners near retirement have no written succession plan,
+                which puts deals, jobs, and client relationships at risk when they sell."
+            </p>
+            <p class="text-gray-400 text-sm mt-3 font-medium">— Grounded in BDC / CFIB Canadian research</p>
+        </div>
+
+        <!-- Two audiences -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="card p-6 text-left">
+                <div class="text-3xl mb-3">🏭</div>
+                <h3 class="font-bold text-navy text-lg mb-2">If you're retiring</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    You don't need to write anything. You just talk.
+                    Succession asks the right questions, records your answers,
+                    and builds the manual your business never had —
+                    in the voice of the person who ran it.
+                </p>
+            </div>
+            <div class="card p-6 text-left">
+                <div class="text-3xl mb-3">🤝</div>
+                <h3 class="font-bold text-navy text-lg mb-2">If you advise sellers</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    You've watched deals die because the owner's knowledge
+                    is all in their head. Succession gives your clients
+                    the document that keeps diligence moving — and your deals closing.
+                    <strong class="text-gray-700">You refer. We handle the tech.</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how-it-works" class="py-20 px-6 md:px-12 bg-white">
+    <div class="max-w-3xl mx-auto">
+
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-black text-navy leading-tight">
+                How it works
+            </h2>
+            <p class="text-gray-500 mt-3 text-lg">Simple. Conversational. Built on AI.</p>
+        </div>
+
+        <div class="space-y-6">
+
+            <div class="flex gap-5 items-start">
+                <div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-black text-white text-sm"
+                     style="background:linear-gradient(135deg,#ec4899,#8b5cf6);">1</div>
+                <div>
+                    <h3 class="font-bold text-navy text-base mb-1">The owner talks</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">3–5 recorded voice sessions over two weeks. Succession asks guided questions about customers, operations, vendors, finances, and the things only they know. No writing. No prep.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-5 items-start">
+                <div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-black text-white text-sm"
+                     style="background:linear-gradient(135deg,#ec4899,#8b5cf6);">2</div>
+                <div>
+                    <h3 class="font-bold text-navy text-base mb-1">The AI structures it</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Succession transcribes, organizes, and formats every insight into a clean, structured document — sorted by section, flagged by risk level, ready for diligence.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-5 items-start">
+                <div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-black text-white text-sm"
+                     style="background:linear-gradient(135deg,#F59E0B,#ec4899);">✓</div>
+                <div>
+                    <h3 class="font-bold text-navy text-base mb-1">The buyer gets the full picture</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">A buyer-ready operations manual — covering customers, operations, vendors, finances, and owner instincts. The document that answers the hard questions before they're asked. Diligence gets faster. Deals close.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mini preview card -->
+        <div class="mt-12 bg-gray-50 border border-gray-200 rounded-2xl p-6 font-mono text-xs text-gray-600">
+            <div class="flex items-center gap-2 mb-4">
+                <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                <span class="text-gray-400 ml-2" style="font-family:'Inter',sans-serif;">Sample output — Succession Handover Document</span>
+            </div>
+            <p class="text-pink-600 font-bold text-xs uppercase tracking-widest mb-2" style="font-family:'Inter',sans-serif;">Key Customer — Fournier Construction</p>
+            <p class="mb-1"><span class="text-gray-400">Revenue share:</span> ~40% of annual revenue</p>
+            <p class="mb-1"><span class="text-gray-400">Contact protocol:</span> Phone only. Tuesdays before 8am. Never email.</p>
+            <p class="mb-3"><span class="text-gray-400">Transition risk:</span> <span class="text-red-500 font-semibold">HIGH</span> — relationship is personal to current owner</p>
+            <p class="text-gray-400 italic text-xs">+ 4 more key customer profiles · Operations section · Vendor contacts · Owner tribal knowledge...</p>
+        </div>
+    </div>
+</section>
+
+<!-- ── FOUNDING ADVISOR SECTION ── -->
+<section class="py-20 px-6 md:px-12 hero-bg text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]"
+         style="background-image:radial-gradient(circle,white 1px,transparent 1px);background-size:28px 28px;"></div>
+
+    <div class="max-w-3xl mx-auto relative text-center">
+
+        <span class="glass text-pink-200 text-sm font-medium px-4 py-2 rounded-full inline-block mb-8">
+            Limited to 4–5 Founding Advisors
+        </span>
+
+        <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">
+            Help shape this.<br>
+            <span class="text-gold">Earn when your clients use it.</span>
+        </h2>
+
+        <p class="text-blue-100 text-lg mb-10 leading-relaxed max-w-xl mx-auto font-light">
+            We're not looking for investors. We're looking for
+            <strong class="text-white">brokers, CPAs, lawyers, and advisors</strong> who will
+            co-design Succession with us — and be first in line when it launches.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-5 mb-10">
+            <div class="glass rounded-2xl p-6">
+                <div class="text-3xl mb-3">🎯</div>
+                <h3 class="font-bold text-base mb-2">Shape the product</h3>
+                <p class="text-blue-200 text-sm leading-relaxed">Help design the question flows for your domain. Your expertise becomes part of the product.</p>
+            </div>
+            <div class="glass rounded-2xl p-6">
+                <div class="text-3xl mb-3">💰</div>
+                <h3 class="font-bold text-base mb-2">Earn on referrals</h3>
+                <p class="text-blue-200 text-sm leading-relaxed">Refer your clients. They pay for the extraction. You earn referral revenue. We handle all the AI and tech.</p>
+            </div>
+            <div class="glass rounded-2xl p-6">
+                <div class="text-3xl mb-3">🏆</div>
+                <h3 class="font-bold text-base mb-2">Founding credit</h3>
+                <p class="text-blue-200 text-sm leading-relaxed">Be the advisor who solved what others couldn't — before anyone else did.</p>
+            </div>
+        </div>
+
+        <p class="text-blue-300 text-sm">
+            What we ask: 1–2 advisory calls per month (45 min) and feedback on your domain's question flows.<br>
+            <strong class="text-white">No equity. No financial commitments. No tech required.</strong>
+        </p>
+    </div>
+</section>
+
+<!-- ── WAITLIST FORM ── -->
+<section id="waitlist" class="py-20 px-6 md:px-12 bg-cream">
+    <div class="max-w-xl mx-auto">
+
+        <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-black text-navy leading-tight">
+                Join as a <span class="text-gradient">Founding Advisor.</span>
+            </h2>
+            <p class="text-gray-500 mt-3 text-base leading-relaxed">
+                Leave your details. A 15-minute conversation follows —
+                no commitment, no sales pitch.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+
+            <!-- Success state -->
+            <div id="successMsg" class="text-center py-6">
+                <div class="text-5xl mb-4">🎉</div>
+                <h3 class="text-xl font-black text-navy mb-3">You're on the list!</h3>
+                <p class="text-gray-600 mb-4 text-sm leading-relaxed">We'll reach out within 48 hours to schedule your 15-minute founding advisor conversation.</p>
+                <div class="bg-pink-50 border border-pink-100 rounded-xl p-4">
+                    <p class="text-pink-700 text-sm">Questions? <a href="mailto:juan@pvrpose.ai" class="underline font-medium">juan@pvrpose.ai</a></p>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="waitlistForm" class="space-y-5" novalidate>
+
+                <div>
+                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-1.5">Full Name <span class="text-pink-500">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="Your full name"
+                           class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-50 text-gray-900 placeholder-gray-400">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-1.5">Email <span class="text-pink-500">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="you@yourcompany.com"
+                           class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-50 text-gray-900 placeholder-gray-400">
+                </div>
+
+                <div>
+                    <label for="role" class="block text-sm font-semibold text-gray-700 mb-1.5">Your Role</label>
+                    <select id="role" name="role"
+                            class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-50 text-gray-700">
+                        <option value="">Select your role...</option>
+                        <option>Business Broker</option>
+                        <option>CPA / Accountant</option>
+                        <option>Lawyer / Legal</option>
+                        <option>Financial Advisor / Wealth Management</option>
+                        <option>Mortgage Broker</option>
+                        <option>Business Coach / Consultant</option>
+                        <option>Retiring Business Owner</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="involvement" class="block text-sm font-semibold text-gray-700 mb-1.5">
+                        How do you see yourself involved? <span class="text-gray-400 font-normal">(optional)</span>
+                    </label>
+                    <textarea id="involvement" name="involvement" rows="3"
+                              placeholder="e.g. I have clients planning to sell in the next 2 years and I regularly see deals stall due to poor documentation..."
+                              class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-50 text-gray-900 placeholder-gray-400 resize-none"></textarea>
+                </div>
+
+                <!-- CASL Consent -->
+                <div class="flex items-start gap-3 bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <input type="checkbox" id="consent" name="consent" required
+                           class="mt-1 w-4 h-4 flex-shrink-0 accent-pink-500">
+                    <label for="consent" class="text-xs text-gray-500 leading-relaxed">
+                        I consent to being contacted by PVRPOSE AI about the Succession founding advisor program.
+                        My information is handled in accordance with Canadian PIPEDA/CASL requirements.
+                        I can withdraw at any time by emailing <a href="mailto:juan@pvrpose.ai" class="text-pink-500 underline">juan@pvrpose.ai</a>.
+                    </label>
+                </div>
+
+                <!-- Error -->
+                <div id="formError" class="hidden bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-xl"></div>
+
+                <!-- Submit -->
+                <button type="submit" id="submitBtn"
+                        class="btn-main w-full text-white px-8 py-4 rounded-xl text-lg font-bold flex items-center justify-center gap-3">
+                    <span id="submitText">Join as Founding Advisor →</span>
+                    <svg id="submitSpinner" class="hidden animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+                    </svg>
+                </button>
+
+                <p class="text-center text-gray-400 text-xs">No spam. No commitment. PIPEDA/CASL compliant.</p>
+            </form>
+        </div>
+
+        <p class="text-center text-gray-400 text-sm mt-6">
+            Powered by <a href="https://pvrpose.ai" target="_blank" class="text-pink-400 font-medium hover:underline">PVRPOSE AI</a>
+            · Built in Canada · PIPEDA & CASL Compliant
+        </p>
+    </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="hero-bg text-white py-10 px-6 md:px-12">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+        <div>
+            <span class="font-black text-lg">SUCCESSION</span>
+            <span class="text-pink-300 text-xs ml-2">by PVRPOSE AI</span>
+            <p class="text-blue-300 text-xs mt-1">© 2026 PVRPOSE AI · Built in Canada · PIPEDA/CASL Compliant</p>
+        </div>
+        <div class="flex flex-col gap-1 items-center md:items-end">
+            <a href="mailto:juan@pvrpose.ai" class="text-pink-300 hover:text-white text-sm transition-colors">juan@pvrpose.ai</a>
+            <a href="https://pvrpose.ai" target="_blank" class="text-blue-300 hover:text-white text-sm transition-colors">pvrpose.ai</a>
+            <p class="text-blue-500 text-xs mt-1">Pricing and formal agreements are structured after the pilot phase.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobile sticky CTA -->
+<div class="mobile-bar md:hidden text-center">
+    <a href="#waitlist" class="text-white font-bold text-sm">Join as Founding Advisor — Free 15-Min Call →</a>
+</div>
+
+<!-- Desktop sticky pill -->
+<div id="desktopPill" class="hidden md:block">
+    <a href="#waitlist" class="btn-main text-white px-5 py-3 rounded-full font-bold text-sm shadow-2xl flex items-center gap-2">
+        🎯 Join Founding Advisors →
+    </a>
+</div>
+
+<script>
+    // Desktop sticky pill
+    const pill = document.getElementById('desktopPill');
+    window.addEventListener('scroll', () => {
+        const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        pill.classList.toggle('show', pct > 0.25);
+    });
+
+    // Form
+    const form    = document.getElementById('waitlistForm');
+    const success = document.getElementById('successMsg');
+    const btn     = document.getElementById('submitBtn');
+    const btnTxt  = document.getElementById('submitText');
+    const spinner = document.getElementById('submitSpinner');
+    const errBox  = document.getElementById('formError');
+
+    function showErr(msg) {
+        errBox.textContent = msg;
+        errBox.classList.remove('hidden');
+        btn.disabled = false;
+        btnTxt.textContent = 'Join as Founding Advisor →';
+        spinner.classList.add('hidden');
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        errBox.classList.add('hidden');
+
+        const name        = document.getElementById('name').value.trim();
+        const email       = document.getElementById('email').value.trim();
+        const role        = document.getElementById('role').value;
+        const involvement = document.getElementById('involvement').value.trim();
+        const consent     = document.getElementById('consent').checked;
+
+        if (!name)    return showErr('Please enter your full name.');
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showErr('Please enter a valid email address.');
+        if (!consent) return showErr('Please confirm your consent to be contacted.');
+
+        btn.disabled = true;
+        btnTxt.textContent = 'Submitting...';
+        spinner.classList.remove('hidden');
+
+        try {
+            const res  = await fetch('/api/submit-waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, role, involvement })
+            });
+            const data = await res.json();
+
+            if (!res.ok || !data.success) {
+                showErr(data.error || 'Something went wrong. Please email juan@pvrpose.ai directly.');
+                return;
+            }
+
+            form.style.display = 'none';
+            success.classList.add('show');
+            document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        } catch {
+            showErr('Connection error. Please try again or email juan@pvrpose.ai directly.');
+        } finally {
+            btn.disabled = false;
+            spinner.classList.add('hidden');
+        }
+    });
+</script>
+
+</body>
+</html>
