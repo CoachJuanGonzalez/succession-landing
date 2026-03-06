@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v1-succession-pvrpose-ai -->
+<!-- v2-succession-pvrpose-ai -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,12 +26,12 @@
             theme: {
                 extend: {
                     colors: {
-                        'navy':       '#0F1F3D',
-                        'navy-mid':   '#1E3A8A',
-                        'pink':       '#ec4899',
-                        'purple':     '#8b5cf6',
-                        'gold':       '#F59E0B',
-                        'cream':      '#FFFBF5',
+                        'navy':     '#0F1F3D',
+                        'navy-mid': '#1E3A8A',
+                        'pink':     '#ec4899',
+                        'purple':   '#8b5cf6',
+                        'gold':     '#F59E0B',
+                        'cream':    '#FFFBF5',
                     },
                     fontFamily: { 'sans': ['Inter', 'Helvetica', 'system-ui', 'sans-serif'] }
                 }
@@ -105,6 +105,55 @@
         .d4 { animation-delay: 0.4s; }
         .d5 { animation-delay: 0.5s; }
 
+        /* ── Hero visual timeline ── */
+        .timeline-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: nowrap;
+        }
+        .tl-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            min-width: 0;
+        }
+        .tl-circle {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+        .tl-arrow {
+            font-size: 22px;
+            color: rgba(255,255,255,0.35);
+            padding: 0 6px;
+            margin-bottom: 32px;
+            flex-shrink: 0;
+        }
+        .tl-label {
+            font-size: 11px;
+            line-height: 1.4;
+            color: rgba(255,255,255,0.75);
+            font-weight: 500;
+            max-width: 80px;
+        }
+        .tl-label strong {
+            display: block;
+            font-size: 12px;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
         /* Mobile sticky CTA */
         .mobile-bar {
             position: fixed; bottom:0; left:0; right:0; z-index:999;
@@ -120,7 +169,6 @@
         #successMsg { display:none; }
         #successMsg.show { display:block; animation: fadeUp 0.5s ease-out both; }
 
-        /* stat gradient text */
         .stat { font-weight:900; background: linear-gradient(135deg,#ec4899,#8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
         ::-webkit-scrollbar { width:5px; }
@@ -129,10 +177,16 @@
 </head>
 <body class="antialiased">
 
-<!-- Bill 96 Notice -->
-<div style="background:#1E3A8A;color:#fff;text-align:center;padding:9px 16px;font-size:12.5px;">
-    🇫🇷 <strong>Version française en préparation.</strong>
-    Pour communiquer en français : <a href="mailto:juan@pvrpose.ai" style="color:#fbcfe8;text-decoration:underline;">juan@pvrpose.ai</a>
+<!-- ══════════════════════════════════════════
+     BILL 96 / LAW 25 — QUEBEC LEGAL COMPLIANCE NOTICE
+     Required under: Loi sur la langue officielle et commune du Québec (Bill 96)
+     and Loi modernisant des dispositions législatives en matière de protection
+     des renseignements personnels (Law 25 / Bill 64)
+════════════════════════════════════════════ -->
+<div style="background:#1E3A8A;color:#fff;text-align:center;padding:10px 16px;font-size:12.5px;line-height:1.6;">
+    🇫🇷 <strong>Version française disponible sur demande</strong> — Ce site est en cours de traduction.
+    Pour communiquer en français ou exercer vos droits en vertu de la <em>Loi 25</em> (protection des renseignements personnels) :
+    <a href="mailto:juan@pvrpose.ai" style="color:#fbcfe8;text-decoration:underline;">juan@pvrpose.ai</a>
 </div>
 
 <!-- ── NAV ── -->
@@ -155,10 +209,12 @@
 
     <div class="max-w-4xl mx-auto relative text-center md:text-left">
 
+        <!-- Badge -->
         <div class="fade-up inline-block glass text-pink-200 text-sm font-medium px-4 py-2 rounded-full mb-8">
             🇨🇦 &nbsp;Built for Quebec &amp; Canadian Small Business Advisors — TNC &amp; BDC Validated Problem
         </div>
 
+        <!-- Headline -->
         <h1 class="fade-up d1 text-4xl md:text-6xl font-black leading-tight tracking-tight mb-6"
             style="line-height:1.06;">
             You built this business<br>
@@ -166,13 +222,15 @@
             <span class="text-gold">Don't let it walk out the door with you.</span>
         </h1>
 
+        <!-- Sub-headline -->
         <p class="fade-up d2 text-lg md:text-xl text-blue-100 mb-10 max-w-2xl mx-auto md:mx-0 leading-relaxed font-light">
             Succession is a voice-powered AI tool that captures what retiring owners know
             through conversation — and turns it into a buyer-ready handover document
             in 3–5 sessions. <strong class="text-white font-semibold">No writing. No forms. Just talking.</strong>
         </p>
 
-        <div class="fade-up d3 flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-10">
+        <!-- CTAs -->
+        <div class="fade-up d3 flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-12">
             <a href="#waitlist" class="btn-main text-white px-8 py-4 rounded-xl text-lg font-bold text-center">
                 Join as Founding Advisor →
             </a>
@@ -181,8 +239,42 @@
             </a>
         </div>
 
+        <!-- ── HERO VISUAL TIMELINE ── -->
+        <div class="fade-up d4 mb-12">
+            <p class="text-blue-300 text-xs uppercase tracking-widest font-semibold mb-5 text-center md:text-left">How Succession works in 3 steps</p>
+            <div class="timeline-visual max-w-lg mx-auto md:mx-0">
+
+                <div class="tl-node">
+                    <div class="tl-circle" style="background:linear-gradient(135deg,#F59E0B,#ec4899);">🎙️</div>
+                    <div class="tl-label"><strong>30 Years</strong>of owner knowledge</div>
+                </div>
+
+                <div class="tl-arrow">→</div>
+
+                <div class="tl-node">
+                    <div class="tl-circle" style="background:linear-gradient(135deg,#ec4899,#8b5cf6);">🤖</div>
+                    <div class="tl-label"><strong>5 Sessions</strong>AI captures &amp; structures</div>
+                </div>
+
+                <div class="tl-arrow">→</div>
+
+                <div class="tl-node">
+                    <div class="tl-circle" style="background:linear-gradient(135deg,#8b5cf6,#1E3A8A);">📄</div>
+                    <div class="tl-label"><strong>Handover Doc</strong>buyer-ready &amp; deal-closing</div>
+                </div>
+
+                <div class="tl-arrow">→</div>
+
+                <div class="tl-node">
+                    <div class="tl-circle" style="background:linear-gradient(135deg,#1E3A8A,#0F1F3D); border: 2px solid rgba(255,255,255,0.2);">🏆</div>
+                    <div class="tl-label"><strong>Legacy Secured</strong>deal closes, jobs protected</div>
+                </div>
+
+            </div>
+        </div>
+
         <!-- 3 stats -->
-        <div class="fade-up d4 grid grid-cols-3 gap-4 max-w-lg mx-auto md:mx-0">
+        <div class="fade-up d5 grid grid-cols-3 gap-4 max-w-lg mx-auto md:mx-0">
             <div class="glass rounded-2xl p-4 text-center">
                 <div class="stat text-3xl">75%</div>
                 <div class="text-blue-200 text-xs mt-1 leading-snug">of Canadian small and mid-sized business (SME) owners plan to exit within 10 years</div>
@@ -197,7 +289,7 @@
             </div>
         </div>
 
-        <p class="fade-up d5 text-blue-400 text-xs mt-6 text-center md:text-left">
+        <p class="text-blue-400 text-xs mt-4 text-center md:text-left">
             Sources: BDC, CFIB Canadian SME Succession Research
         </p>
     </div>
@@ -274,7 +366,6 @@
         </div>
 
         <div class="space-y-6">
-
             <div class="flex gap-5 items-start">
                 <div class="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center font-black text-white text-sm"
                      style="background:linear-gradient(135deg,#ec4899,#8b5cf6);">1</div>
@@ -298,12 +389,12 @@
                      style="background:linear-gradient(135deg,#F59E0B,#ec4899);">✓</div>
                 <div>
                     <h3 class="font-bold text-navy text-base mb-1">The buyer gets the full picture</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">A buyer-ready operations manual — covering customers, operations, vendors, finances, and owner instincts. The document that answers the hard questions before they're asked. Diligence gets faster. Deals close.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed">A buyer-ready operations manual covering customers, operations, vendors, finances, and owner instincts. The document that answers the hard questions before they're asked. Diligence gets faster. Deals close.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Mini preview card -->
+        <!-- Sample output preview -->
         <div class="mt-12 bg-gray-50 border border-gray-200 rounded-2xl p-6 font-mono text-xs text-gray-600">
             <div class="flex items-center gap-2 mb-4">
                 <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
@@ -315,7 +406,7 @@
             <p class="mb-1"><span class="text-gray-400">Revenue share:</span> ~40% of annual revenue</p>
             <p class="mb-1"><span class="text-gray-400">Contact protocol:</span> Phone only. Tuesdays before 8am. Never email.</p>
             <p class="mb-3"><span class="text-gray-400">Transition risk:</span> <span class="text-red-500 font-semibold">HIGH</span> — relationship is personal to current owner</p>
-            <p class="text-gray-400 italic text-xs">+ 4 more key customer profiles · Operations section · Vendor contacts · Owner tribal knowledge...</p>
+            <p class="text-gray-400 italic text-xs">+ 4 more customer profiles · Operations · Vendor contacts · Owner tribal knowledge...</p>
         </div>
     </div>
 </section>
@@ -351,7 +442,7 @@
             <div class="glass rounded-2xl p-6">
                 <div class="text-3xl mb-3">💰</div>
                 <h3 class="font-bold text-base mb-2">Earn on referrals</h3>
-                <p class="text-blue-200 text-sm leading-relaxed">Refer retiring business owners from your network. They pay a simple extraction fee. You earn referral revenue per completed handover (details in MOU).</p>
+                <p class="text-blue-200 text-sm leading-relaxed">Refer retiring business owners from your network. They pay a simple extraction fee. You earn referral revenue per completed handover (details in MOU, subject to applicable Quebec and Canadian law).</p>
             </div>
             <div class="glass rounded-2xl p-6">
                 <div class="text-3xl mb-3">🏆</div>
@@ -360,10 +451,19 @@
             </div>
         </div>
 
-        <p class="text-blue-300 text-sm">
-            What we ask: 1–2 advisory calls per month (45 min) and feedback on your domain's question flows.<br>
-            <strong class="text-white">No equity. No financial commitments. No tech required.</strong>
-        </p>
+        <!-- What we ask — with specifics -->
+        <div class="glass rounded-2xl p-6 text-left max-w-xl mx-auto">
+            <p class="text-pink-200 font-semibold text-sm uppercase tracking-wide mb-3">What we ask of you</p>
+            <ul class="space-y-2 text-blue-100 text-sm">
+                <li>· Bi-weekly co-design calls (45 min each)</li>
+                <li>· 5–10 hrs/month reviewing question flows for your domain</li>
+                <li>· Optional: introduce one pilot client when ready</li>
+            </ul>
+            <p class="text-blue-300 text-xs mt-4">
+                <strong class="text-white">No equity. No financial commitments. No tech required.</strong><br>
+                Pricing and formal agreements are structured after the pilot phase.
+            </p>
+        </div>
     </div>
 </section>
 
@@ -376,8 +476,8 @@
                 Join as a <span class="text-gradient">Founding Advisor.</span>
             </h2>
             <p class="text-gray-500 mt-3 text-base leading-relaxed">
-                Leave your details. A 15-minute conversation follows —
-                no commitment, no sales pitch.
+                Leave your details below. We'll reach out within 48 hours
+                to schedule a 15-minute conversation — no commitment, no sales pitch.
             </p>
         </div>
 
@@ -387,7 +487,7 @@
             <div id="successMsg" class="text-center py-6">
                 <div class="text-5xl mb-4">🎉</div>
                 <h3 class="text-xl font-black text-navy mb-3">You're on the list!</h3>
-                <p class="text-gray-600 mb-4 text-sm leading-relaxed">We'll reach out within 48 hours to schedule your 15-minute founding advisor conversation.</p>
+                <p class="text-gray-600 mb-4 text-sm leading-relaxed">We'll reach out within 48 hours to schedule your founding advisor conversation.</p>
                 <div class="bg-pink-50 border border-pink-100 rounded-xl p-4">
                     <p class="text-pink-700 text-sm">Questions? <a href="mailto:juan@pvrpose.ai" class="underline font-medium">juan@pvrpose.ai</a></p>
                 </div>
@@ -433,14 +533,19 @@
                               class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-50 text-gray-900 placeholder-gray-400 resize-none"></textarea>
                 </div>
 
-                <!-- CASL Consent -->
+                <!-- CASL / Law 25 / PIPEDA Consent -->
                 <div class="flex items-start gap-3 bg-gray-50 p-4 rounded-xl border border-gray-200">
                     <input type="checkbox" id="consent" name="consent" required
                            class="mt-1 w-4 h-4 flex-shrink-0 accent-pink-500">
                     <label for="consent" class="text-xs text-gray-500 leading-relaxed">
-                        I consent to being contacted by PVRPOSE AI about the Succession founding advisor program.
-                        My information is handled in accordance with Canadian PIPEDA/CASL requirements.
-                        I can withdraw at any time by emailing <a href="mailto:juan@pvrpose.ai" class="text-pink-500 underline">juan@pvrpose.ai</a>.
+                        I consent to being contacted by PVRPOSE AI for the purpose of validating the Succession app concept and the founding advisor program.
+                        My personal information will be collected, used, and protected in accordance with the
+                        <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA),
+                        the <em>Loi modernisant des dispositions législatives en matière de protection des renseignements personnels</em> (Quebec Law 25 / Bill 64),
+                        and Canadian Anti-Spam Legislation (CASL).
+                        I may withdraw my consent at any time by emailing
+                        <a href="mailto:juan@pvrpose.ai" class="text-pink-500 underline">juan@pvrpose.ai</a>.
+                        For French-language privacy rights under Quebec Law 25, contact the same address.
                     </label>
                 </div>
 
@@ -457,13 +562,13 @@
                     </svg>
                 </button>
 
-                <p class="text-center text-gray-400 text-xs">No spam. No commitment. PIPEDA/CASL compliant.</p>
+                <p class="text-center text-gray-400 text-xs">No spam. No commitment. PIPEDA · Law 25 · CASL compliant.</p>
             </form>
         </div>
 
         <p class="text-center text-gray-400 text-sm mt-6">
             Powered by <a href="https://pvrpose.ai" target="_blank" class="text-pink-400 font-medium hover:underline">PVRPOSE AI</a>
-            · Built in Canada · PIPEDA & CASL Compliant
+            · Built in Canada
         </p>
     </div>
 </section>
@@ -474,12 +579,16 @@
         <div>
             <span class="font-black text-lg">SUCCESSION</span>
             <span class="text-pink-300 text-xs ml-2">by PVRPOSE AI</span>
-            <p class="text-blue-300 text-xs mt-1">© 2026 PVRPOSE AI · Built in Canada · PIPEDA/CASL Compliant</p>
+            <p class="text-blue-300 text-xs mt-1">© 2026 PVRPOSE AI · Built in Canada</p>
+            <p class="text-blue-400 text-xs mt-0.5">PIPEDA · Quebec Law 25 · CASL Compliant</p>
         </div>
         <div class="flex flex-col gap-1 items-center md:items-end">
             <a href="mailto:juan@pvrpose.ai" class="text-pink-300 hover:text-white text-sm transition-colors">juan@pvrpose.ai</a>
             <a href="https://pvrpose.ai" target="_blank" class="text-blue-300 hover:text-white text-sm transition-colors">pvrpose.ai</a>
-            <p class="text-blue-500 text-xs mt-1">Pricing and formal agreements are structured after the pilot phase.</p>
+            <p class="text-blue-500 text-xs mt-1 max-w-xs text-center md:text-right">
+                Pricing and formal agreements are structured after the pilot phase.
+                This page is for founding advisor validation only.
+            </p>
         </div>
     </div>
 </footer>
