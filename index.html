@@ -184,9 +184,10 @@
         ::-webkit-scrollbar { width:5px; }
         ::-webkit-scrollbar-thumb { background:#ec4899; border-radius:3px; }
 
-        /* Nav logo */
-        .nav-logo { height:44px; width:auto; object-fit:contain; }
-        @media (max-width:768px) { .nav-logo { height:36px; } }
+        /* Nav / footer logo — wide logotype needs width constraint */
+        .nav-logo { height:auto; width:160px; max-height:40px; object-fit:contain; }
+        @media (max-width:768px) { .nav-logo { width:130px; max-height:32px; } }
+        .footer-logo { height:auto; width:140px; max-height:36px; object-fit:contain; }
     </style>
 </head>
 <body class="antialiased">
@@ -581,7 +582,7 @@
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
         <div>
             <a href="https://pvrpose.ai/" target="_blank" rel="noopener noreferrer">
-                <img src="/logotypes-ai-rez-01.png" alt="PVRPOSE AI" class="nav-logo mb-2">
+                <img src="/logotypes-ai-rez-01.png" alt="PVRPOSE AI" class="footer-logo mb-2">
             </a>
             <p class="text-gray-400 text-xs mt-1">© 2026 PVRPOSE AI · Built in Canada</p>
             <p class="text-gray-400 text-xs mt-0.5">PIPEDA · Quebec Law 25 · CASL Compliant</p>
