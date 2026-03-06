@@ -41,12 +41,12 @@ module.exports = async function handler(req, res) {
         const airtableUrl = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
 
         const fields = {
-            'Name':           name.trim(),
-            'Email':          email.trim().toLowerCase(),
-            'Role/Industry':  role        || 'Not specified',
-            'How you\'d like to be involved': involvement || '',
-            'Submitted At':   new Date().toISOString(),
-            'Source':         'succession.pvrpose.ai'
+            'name':         name.trim(),
+            'email':        email.trim().toLowerCase(),
+            'role':         role         || 'Not specified',
+            'involvement':  involvement  || '',
+            'submitted_at': new Date().toISOString(),
+            'source':       'succession.pvrpose.ai'
         };
 
         const response = await fetch(airtableUrl, {
