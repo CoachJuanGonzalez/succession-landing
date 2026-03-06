@@ -1,0 +1,12 @@
+{
+  "name": "Succession by PVRPOSE AI",
+  "short_name": "Succession",
+  "description": "Your Life's Work Deserves More Than a Box of Files",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0F1F3D",
+  "background_color": "#FFFBF5",
+  "display": "browser"
+}
