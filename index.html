@@ -184,16 +184,10 @@
         ::-webkit-scrollbar { width:5px; }
         ::-webkit-scrollbar-thumb { background:#ec4899; border-radius:3px; }
 
-        /* Inline logo block */
-        .logo-block { display:inline-flex; flex-direction:column; align-items:center; line-height:1; text-decoration:none; }
-        .logo-block .logo-row { display:flex; align-items:center; gap:6px; }
-        .logo-block .logo-wordmark { font-family:'Inter',sans-serif; font-weight:900; font-size:22px; letter-spacing:-0.5px; color:#111; }
-        .logo-block .logo-wordmark span { background:linear-gradient(135deg,#ec4899,#8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-        .logo-block .logo-icon { height:22px; width:auto; }
-        .logo-block .logo-tagline { font-size:9px; color:#888; font-weight:400; letter-spacing:0.3px; margin-top:2px; }
-        .footer-logo-block .logo-wordmark { font-size:18px; }
-        .footer-logo-block .logo-icon { height:18px; }
-        .footer-logo-block .logo-tagline { font-size:8.5px; }
+        /* Nav / footer logo */
+        .nav-logo { width:200px; height:auto; display:block; }
+        @media (max-width:768px) { .nav-logo { width:160px; } }
+        .footer-logo { width:180px; height:auto; display:block; }
     </style>
 </head>
 <body class="antialiased">
@@ -213,12 +207,8 @@
 <!-- ── NAV ── -->
 <nav style="background:#fff;border-bottom:1px solid #f0f0f0;" class="px-6 md:px-12 py-3">
     <div class="max-w-5xl mx-auto flex items-center justify-between">
-        <a href="https://pvrpose.ai/" target="_blank" rel="noopener noreferrer" class="logo-block">
-            <div class="logo-row">
-                <span class="logo-wordmark">PV<span>R</span>POSE</span>
-                <img src="/logos-ai-rez-01.png" alt="" class="logo-icon" aria-hidden="true">
-            </div>
-            <span class="logo-tagline">Own Your Voice. Vision. Vibe.</span>
+        <a href="https://pvrpose.ai/" target="_blank" rel="noopener noreferrer">
+            <img src="/logotypes-ai-rez-01.jpg" alt="PVRPOSE AI" class="nav-logo">
         </a>
         <a href="#waitlist" class="btn-main text-white px-5 py-2 rounded-full text-sm font-bold hidden md:inline-block">
             Join the Waitlist →
@@ -591,12 +581,8 @@
 <footer style="background:#fff;border-top:1px solid #f0f0f0;" class="py-10 px-6 md:px-12">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
         <div>
-            <a href="https://pvrpose.ai/" target="_blank" rel="noopener noreferrer" class="logo-block footer-logo-block mb-2">
-                <div class="logo-row">
-                    <span class="logo-wordmark">PV<span>R</span>POSE</span>
-                    <img src="/logos-ai-rez-01.png" alt="" class="logo-icon" aria-hidden="true">
-                </div>
-                <span class="logo-tagline">Own Your Voice. Vision. Vibe.</span>
+            <a href="https://pvrpose.ai/" target="_blank" rel="noopener noreferrer">
+                <img src="/logotypes-ai-rez-01.jpg" alt="PVRPOSE AI" class="footer-logo mb-2">
             </a>
             <p class="text-gray-400 text-xs mt-1">© 2026 PVRPOSE AI · Built in Canada</p>
             <p class="text-gray-400 text-xs mt-0.5">PIPEDA · Quebec Law 25 · CASL Compliant</p>
