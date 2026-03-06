@@ -1,11 +1,11 @@
 /**
  * Vercel Serverless Function — Succession Waitlist Submission Handler
- * Saves waitlist signups directly to Airtable "Succession Waitlist" table
+ * Saves waitlist signups directly to Airtable "succession_waitlist" table
  *
  * Environment Variables Required (set in Vercel Dashboard):
  * - AIRTABLE_API_KEY        : Airtable Personal Access Token
  * - AIRTABLE_BASE_ID        : appDIjiOt5vdFs60V
- * - AIRTABLE_TABLE_NAME     : Succession Waitlist
+ * - AIRTABLE_TABLE_NAME     : succession_waitlist
  */
 
 module.exports = async function handler(req, res) {
@@ -30,7 +30,7 @@ module.exports = async function handler(req, res) {
         }
 
         const baseId    = process.env.AIRTABLE_BASE_ID;
-        const tableName = process.env.AIRTABLE_TABLE_NAME || 'Succession Waitlist';
+        const tableName = process.env.AIRTABLE_TABLE_NAME || 'succession_waitlist';
         const apiKey    = process.env.AIRTABLE_API_KEY;
 
         if (!apiKey || !baseId) {
